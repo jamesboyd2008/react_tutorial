@@ -1,0 +1,29 @@
+{
+  "name": "react_skeleton",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesboyd2008/react_tutorial.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "James Boyd",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jamesboyd2008/react_tutorial/issues"
+  },
+  "homepage": "https://github.com/jamesboyd2008/react_tutorial#readme",
+  "dependencies": {
+    "babel-preset-react": "^6.5.0",
+    "babelify": "^7.3.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "watchify": "^3.7.0"
+  }
+}
