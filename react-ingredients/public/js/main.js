@@ -19667,7 +19667,7 @@ module.exports = require('./lib/React');
 
 },{"./lib/React":55}],168:[function(require,module,exports){
 var React = require('react');
-var ListItem = require('./List.jsx');
+var ListItem = require('./ListItem.jsx');
 
 var List = React.createClass({
   displayName: 'List',
@@ -19688,7 +19688,28 @@ var List = React.createClass({
 
 module.exports = List;
 
-},{"./List.jsx":168,"react":167}],169:[function(require,module,exports){
+},{"./ListItem.jsx":169,"react":167}],169:[function(require,module,exports){
+var React = require('react');
+
+var ListItem = React.createClass({
+  displayName: 'ListItem',
+
+  render: function () {
+    return React.createElement(
+      'li',
+      null,
+      React.createElement(
+        'h4',
+        null,
+        this.props.text
+      )
+    );
+  }
+});
+
+module.exports = ListItem;
+
+},{"react":167}],170:[function(require,module,exports){
 var React = require('react');
 var List = require('./List.jsx');
 
@@ -19698,15 +19719,15 @@ var ListManager = React.createClass({
   getInitialState: function () {
     return { items: [], newItemText: '' };
   },
+  onChange: function (e) {
+    this.setState({ newItemText: e.target.value });
+  },
   handleSubmit: function (e) {
     e.preventDefault();
 
     var currentItems = this.state.items;
     currentItems.push(this.state.newItemText);
     this.setState({ items: currentItems, newItemText: '' });
-  },
-  onChange: function (e) {
-    this.setState({ newItemText: e.target.value });
   },
   render: function () {
     return React.createElement(
@@ -19734,11 +19755,11 @@ var ListManager = React.createClass({
 
 module.exports = ListManager;
 
-},{"./List.jsx":168,"react":167}],170:[function(require,module,exports){
+},{"./List.jsx":168,"react":167}],171:[function(require,module,exports){
 var React = require('react');
 var ReactDOM = require('react-dom');
 var ListManager = require('./components/ListManager.jsx');
 
-ReactDOM.render(React.createElement(ListManager, { title: 'ingredients' }), document.getElementById('ingredients'));
+ReactDOM.render(React.createElement(ListManager, { title: 'These Ingredients:' }), document.getElementById('ingredients'));
 
-},{"./components/ListManager.jsx":169,"react":167,"react-dom":29}]},{},[170]);
+},{"./components/ListManager.jsx":170,"react":167,"react-dom":29}]},{},[171]);
