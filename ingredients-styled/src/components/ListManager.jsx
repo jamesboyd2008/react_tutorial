@@ -16,8 +16,12 @@ var ListManager = React.createClass({
     this.setState({items: currentItems, newItemText: ''});
   },
   render: function() {
+    var divStyle = {
+      marginTop: 10,
+    }
+
     return (
-      <div className='col-xs-12 col-md-9'>
+      <div style={divStyle} className='col-xs-12 col-md-9'>
         <div className='panel panel-primary'>
           <div className='panel-heading'>
             <h3>{this.props.title}</h3>

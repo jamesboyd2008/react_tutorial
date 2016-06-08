@@ -19730,9 +19730,13 @@ var ListManager = React.createClass({
     this.setState({ items: currentItems, newItemText: '' });
   },
   render: function () {
+    var divStyle = {
+      marginTop: 10
+    };
+
     return React.createElement(
       'div',
-      { className: 'col-xs-12 col-md-9' },
+      { style: divStyle, className: 'col-xs-12 col-md-9' },
       React.createElement(
         'div',
         { className: 'panel panel-primary' },
