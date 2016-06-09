@@ -20,10 +20,17 @@ var ListManager = React.createClass({
       marginTop: 10,
     }
 
+    var headingStyle = {}
+
+    if (this.props.headingColor) {
+      headingStyle.background = this.props.headingColor;
+      headingStyle.color = 'black';
+    }
+
     return (
-      <div style={divStyle} className='col-xs-12 col-md-9'>
+      <div style={divStyle} className='col-xs-4'>
         <div className='panel panel-primary'>
-          <div className='panel-heading'>
+          <div style={headingStyle} className='panel-heading'>
             <h3>{this.props.title}</h3>
           </div>
           <div className='row panel-body'>

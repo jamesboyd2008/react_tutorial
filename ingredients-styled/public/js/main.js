@@ -19734,15 +19734,22 @@ var ListManager = React.createClass({
       marginTop: 10
     };
 
+    var headingStyle = {};
+
+    if (this.props.headingColor) {
+      headingStyle.background = this.props.headingColor;
+      headingStyle.color = 'black';
+    }
+
     return React.createElement(
       'div',
-      { style: divStyle, className: 'col-xs-12 col-md-9' },
+      { style: divStyle, className: 'col-xs-4' },
       React.createElement(
         'div',
         { className: 'panel panel-primary' },
         React.createElement(
           'div',
-          { className: 'panel-heading' },
+          { style: headingStyle, className: 'panel-heading' },
           React.createElement(
             'h3',
             null,
@@ -19784,6 +19791,9 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var ListManager = require('./components/ListManager.jsx');
 
-ReactDOM.render(React.createElement(ListManager, { title: 'These Ingredients:' }), document.getElementById('ingredients'));
+ReactDOM.render(React.createElement(ListManager, { title: 'These Ingredientss:' }), document.getElementById('ingredients'));
+ReactDOM.render(React.createElement(ListManager, { title: 'Foutons:', headingColor: 'beige' }), document.getElementById('foutons'));
+ReactDOM.render(React.createElement(ListManager, { title: 'Open-Faced Sandwiches:',
+  headingColor: 'aquamarine' }), document.getElementById('sandwiches'));
 
 },{"./components/ListManager.jsx":170,"react":167,"react-dom":29}]},{},[171]);
