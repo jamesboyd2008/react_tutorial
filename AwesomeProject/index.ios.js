@@ -1,53 +1,34 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+import React, {
+  Component,
+} from 'react';
 
-import React, { Component } from 'react';
 import {
   AppRegistry,
+  NavigatorIOS,
   StyleSheet,
   Text,
   View
 } from 'react-native';
 
-class AwesomeProject extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Leeeroooooy Jeeeeeennnnkiiiiiins!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
+import Main from './App/Components/Main';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+    backgroundColor: '#111111'
   },
 });
+
+class AwesomeProject extends Component {
+  render() {
+    return (
+      <NavigatorIOS
+        initialRoute = {{
+          title: 'GitHub Note Taker',
+          component: Main
+        }} />
+    );
+  }
+}
 
 AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
