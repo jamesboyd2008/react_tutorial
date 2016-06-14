@@ -22,11 +22,12 @@ const styles = StyleSheet.create({
 class AwesomeProject extends Component {
   render() {
     return (
-      <NavigatorIOS
-        initialRoute = {{
-          title: 'GitHub Note Taker',
+      <NavigatorIOS style={styles.container}
+        initialRoute={{
+          title: "GitHub Notetaker",
           component: Main
-        }} />
+        }}
+      />
     );
   }
 }

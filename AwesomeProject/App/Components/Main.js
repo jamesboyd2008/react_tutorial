@@ -3,8 +3,11 @@ import React, {
 } from 'react';
 
 import {
+  ActivityIndicatorIOS,
   StyleSheet,
   Text,
+  TextInput,
+  TouchableHighlight,
   View
 } from 'react-native';
 
@@ -52,13 +55,24 @@ var styles = StyleSheet.create({
 })
 
 class Main extends Component {
-  render(){
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      isLoading: false,
+      error: false
+    }
+  }
+  render() {
     return (
       <View style={styles.mainContainer}>
-        <Text> Does it work? Huh? Does it? </Text>
+        <Text style={styles.title}> Seek and ye shall find </Text>
+        <TextInput
+          style={styles.searchInput}
+          value={this.state.username}
+          onChange={this.handleChange.bind(this)} />
       </View>
     )
   }
-};
-
+}
 module.exports = Main;
