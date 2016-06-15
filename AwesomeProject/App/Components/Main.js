@@ -11,7 +11,8 @@ import {
   View
 } from 'react-native';
 
-import api from '../Utils/api'
+import api from '../Utils/api';
+import Dashboard from './Dashboard';
 
 var styles = StyleSheet.create({
   mainContainer: {
@@ -89,7 +90,7 @@ class Main extends Component {
             username: ''
           })
         }
-      });
+      })
   }
   render() {
     return (
