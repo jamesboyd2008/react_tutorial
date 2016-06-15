@@ -11,6 +11,8 @@ import {
   View
 } from 'react-native';
 
+import api from '../Utils/api'
+
 var styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
@@ -68,8 +70,26 @@ class Main extends Component {
   }
   handleSubmit(){
     this.setState({isLoading: true});
-    console.log('SUBMIT', this.state.username);
-    
+    api.getBio(this.state.username)
+      .then((res) => {
+        if(res.message === 'Not Found'){
+          this.setState({
+            error: "Dey don't not exist none",
+            isLoading: false
+          })
+        } else {
+          this.props.navigator.push({
+            title: res.name || "Select an Option",
+            component: Dashboard,
+            passProps: {userInfo: res}
+          });
+          this.setState({
+            isLoading: false,
+            error: false,
+            username: ''
+          })
+        }
+      });
   }
   render() {
     return (
