@@ -66,6 +66,11 @@ class Main extends Component {
   handleChange(event){
     this.setState({username: event.nativeEvent.text})
   }
+  handleSubmit(){
+    this.setState({isLoading: true});
+    console.log('SUBMIT', this.state.username);
+    
+  }
   render() {
     return (
       <View style={styles.mainContainer}>
@@ -81,7 +86,6 @@ class Main extends Component {
           <Text style={styles.buttonText}> SEARCHYPOO </Text>
         </TouchableHighlight>
       </View>
-
     )
   }
 }
