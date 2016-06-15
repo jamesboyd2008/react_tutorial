@@ -63,6 +63,9 @@ class Main extends Component {
       error: false
     }
   }
+  handleChange(event){
+    this.setState({username: event.nativeEvent.text})
+  }
   render() {
     return (
       <View style={styles.mainContainer}>
@@ -71,7 +74,14 @@ class Main extends Component {
           style={styles.searchInput}
           value={this.state.username}
           onChange={this.handleChange.bind(this)} />
+        <TouchableHighlight
+          style={styles.button}
+          onPress={this.handleSubmit.bind(this)}
+          underlayColor='white' >
+          <Text style={styles.buttonText}> SEARCHYPOO </Text>
+        </TouchableHighlight>
       </View>
+
     )
   }
 }
