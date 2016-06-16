@@ -81,3 +81,9 @@
 // }
 //
 // console.log(operation[operator](num1, num2));
+
+// Here is some IFFE (immediately-invoked function expression) practice:
+var massage = (function(wordUp){
+  return "Goonies never say " + wordUp + '!';
+})('die');
+console.log(massage);
