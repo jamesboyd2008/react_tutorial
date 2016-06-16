@@ -93,6 +93,9 @@ class Main extends Component {
       })
   }
   render() {
+    var showError = (
+      this.state.error ? <Text> {this.state.error} </Text> : <View></View>
+    );
     return (
       <View style={styles.mainContainer}>
         <Text style={styles.title}> Seek and ye shall find </Text>
@@ -106,6 +109,7 @@ class Main extends Component {
           underlayColor='white' >
           <Text style={styles.buttonText}> SEARCHYPOO </Text>
         </TouchableHighlight>
+        {showError}
       </View>
     )
   }

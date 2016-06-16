@@ -28,6 +28,7 @@ class Dashboard extends Component{
     return (
       <View style={styles.container}>
         <Text>Das Dashboard</Text>
+        <Text> {JSON.stringify(this.props.userInfo)} </Text>
       </View>
     )
   }
