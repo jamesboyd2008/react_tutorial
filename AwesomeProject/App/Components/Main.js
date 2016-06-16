@@ -109,6 +109,11 @@ class Main extends Component {
           underlayColor='white' >
           <Text style={styles.buttonText}> SEARCHYPOO </Text>
         </TouchableHighlight>
+        <ActivityIndicatorIOS
+          animating={this.state.isLoading}
+          color='#111'
+          size='large'>
+        </ActivityIndicatorIOS>
         {showError}
       </View>
     )

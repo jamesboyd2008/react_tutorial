@@ -1,3 +1,4 @@
+
 var api = {
   getBio(username){
     username = username.toLowerCase().trim();
