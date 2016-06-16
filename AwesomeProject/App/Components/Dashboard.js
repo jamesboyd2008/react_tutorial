@@ -44,24 +44,33 @@ class Dashboard extends Component{
 
     return obj;
   }
+  goToProfile() {
+console.log("Going to profile page");
+  }
+  goToRepos() {
+console.log("Going to repos page");
+  }
+  goToNotes() {
+console.log("Going to notes page");
+  }
   render() {
     return (
       <View style={styles.container}>
         <Image source={{uri: this.props.userInfo.avatar_url}} style={styles.image} />
         <TouchableHighlight
-          styles={this.makeBackground(0)}
+          style={this.makeBackground(0)}
           onPress={this.goToProfile.bind(this)}
           underlayColor='#88D4F5'>
             <Text style={styles.buttonText}> View dis Profile </Text>
         </TouchableHighlight>
         <TouchableHighlight
-          styles={this.makeBackground(1)}
+          style={this.makeBackground(1)}
           onPress={this.goToRepos.bind(this)}
           underlayColor='#88D4F5'>
             <Text style={styles.buttonText}> View dis Profile </Text>
         </TouchableHighlight>
         <TouchableHighlight
-        styles={this.makeBackground(2)}
+          style={this.makeBackground(2)}
           onPress={this.goToNotes.bind(this)}
           underlayColor='#88D4F5'>
             <Text style={styles.buttonText}> View dis Profile </Text>
