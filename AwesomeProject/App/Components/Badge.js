@@ -9,7 +9,7 @@ import {
   View,
 } from 'react-native';
 
-var styles = StyleSheet.creat({
+var styles = StyleSheet.create({
   container: {
     backgroundColor: '#48BBEC',
     paddingBottom: 10

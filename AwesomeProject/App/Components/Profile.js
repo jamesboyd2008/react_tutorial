@@ -1,6 +1,4 @@
-import React, {
-  Component
-}, from 'react';
+import React, { Component } from 'react';
 
 import {
    ScrollView,
@@ -9,7 +7,9 @@ import {
    View
 } from 'react-native';
 
-var styels = StyleSheet.create({
+import Badge from './Badge';
+
+var styles = StyleSheet.create({
   container: {
     flex: 1
   },

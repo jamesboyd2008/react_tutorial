@@ -10,6 +10,8 @@ import {
   View
 } from 'react-native';
 
+import Profile from './Profile';
+
 var styles = StyleSheet.create({
   container: {
     marginTop: 65,
@@ -44,14 +46,19 @@ class Dashboard extends Component{
 
     return obj;
   }
+
   goToProfile() {
-console.log("Going to profile page");
+    this.props.navigator.push({
+      component: Profile,
+      title: 'Profile Page',
+      passProps: {userInfo: this.props.userInfo}
+    })
   }
   goToRepos() {
-console.log("Going to repos page");
+    console.log("Going to repos page");
   }
   goToNotes() {
-console.log("Going to notes page");
+    console.log("Going to notes page");
   }
   render() {
     return (
@@ -67,13 +74,13 @@ console.log("Going to notes page");
           style={this.makeBackground(1)}
           onPress={this.goToRepos.bind(this)}
           underlayColor='#88D4F5'>
-            <Text style={styles.buttonText}> View dis Profile </Text>
+            <Text style={styles.buttonText}> View Repos </Text>
         </TouchableHighlight>
         <TouchableHighlight
           style={this.makeBackground(2)}
           onPress={this.goToNotes.bind(this)}
           underlayColor='#88D4F5'>
-            <Text style={styles.buttonText}> View dis Profile </Text>
+            <Text style={styles.buttonText}> View Notes </Text>
         </TouchableHighlight>
       </View>
     )
