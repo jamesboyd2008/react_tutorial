@@ -11,6 +11,8 @@ import {
 } from 'react-native';
 
 import Profile from './Profile';
+import Repositories from './Repositories';
+import api from '../Utils/api';
 
 var styles = StyleSheet.create({
   container: {
@@ -55,7 +57,17 @@ class Dashboard extends Component{
     })
   }
   goToRepos() {
-    console.log("Going to repos page");
+    api.getRepos(this.props.userInfo.login)
+      .then((res) => {
+        this.props.navigator.push({
+          component: Repositories,
+          title: 'Repos Page',
+          passProps: {
+            userInfo: this.props.userInfo,
+            repos: res
+          }
+        })
+      });
   }
   goToNotes() {
     console.log("Going to notes page");

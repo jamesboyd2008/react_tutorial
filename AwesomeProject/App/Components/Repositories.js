@@ -13,7 +13,7 @@ import {
 import Badge from './Badge';
 import Separator from './Helpers/Separator';
 
-var styles = StylSheet.create({
+var styles = StyleSheet.create({
   container: {
     flex: 1,
   },
@@ -48,7 +48,7 @@ class Repositories extends Component{
       var desc = repos[index].description ? <Text style={styles.description}> {repos[index].description} </Text> : <View />;
       return (
         <View key={index}>
-          <View styles={styles.rowContainer}>
+          <View style={styles.rowContainer}>
             <TouchableHighlight
               onPress={this.openPage.bind(this, repos[index].html_url)}
               underlayColor='transparent'>
