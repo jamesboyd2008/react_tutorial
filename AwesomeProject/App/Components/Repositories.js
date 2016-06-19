@@ -12,6 +12,7 @@ import {
 
 import Badge from './Badge';
 import Separator from './Helpers/Separator';
+import Web_View from './Helpers/WebView';
 
 var styles = StyleSheet.create({
   container: {
@@ -40,12 +41,18 @@ var styles = StyleSheet.create({
 
 class Repositories extends Component{
   openPage(url) {
-    console.log('das url: ' + url);
+    this.props.navigator.push({
+      component: Web_View,
+      title: 'Web View',
+      passProps: {url}
+    });
   }
   render() {
     var repos = this.props.repos;
     var list = repos.map((item, index) => {
-      var desc = repos[index].description ? <Text style={styles.description}> {repos[index].description} </Text> : <View />;
+      var desc = repos[index].description ?
+        <Text style={styles.description}> {repos[index].description} </Text> :
+        <View />;
       return (
         <View key={index}>
           <View style={styles.rowContainer}>
