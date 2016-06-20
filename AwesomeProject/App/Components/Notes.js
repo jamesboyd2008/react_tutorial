@@ -112,9 +112,20 @@ class Notes extends Component{
   }
   render() {
     return (
-      
+      <View style={styles.container}>
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={this.renderRow}
+          renderHeader={() => <Badge userInfo={this.props.userInfo} />} />
+        {this.footer()}
+      </View>
     );
   }
 };
+
+Notes.propTypes = {
+  userInfo: React.PropTypes.object.isRequired,
+  notes: React.PropTypes.object.isRequired
+}
 
 module.exports = Notes;

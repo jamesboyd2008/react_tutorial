@@ -13,6 +13,7 @@ import {
 import Profile from './Profile';
 import Repositories from './Repositories';
 import api from '../Utils/api';
+import Notes from './Notes';
 
 var styles = StyleSheet.create({
   container: {
@@ -70,7 +71,18 @@ class Dashboard extends Component{
       });
   }
   goToNotes() {
-    console.log("Going to notes page");
+    api.getNotes(this.props.userInfo.login)
+      .then((res) => {
+        res = res || {};
+        this.props.navigator.push({
+          component: Notes,
+          title: 'Notes',
+          passProps: {
+            notes: res,
+            userInfo: this.props.userInfo
+          }
+        })
+      });
   }
   render() {
     return (
