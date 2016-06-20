@@ -83,9 +83,36 @@ class Notes extends Component{
         this.setState({error})
       });
   }
+  renderRow(rowData) {
+    return (
+      <View>
+        <View style={styles.rowContainer}>
+          <Text> {rowData} </Text>
+        </View>
+        <Separator />
+      </View>
+    )
+  }
+  footer() {
+    return (
+      <View style={styles.footerContainer}>
+        <TextInput
+          style={styles.searchInput}
+          value={this.state.note}
+          onChange={this.handleChange.bind(this)}
+          placeholder="New Note" />
+        <TouchableHighlight
+          style={styles.button}
+          onPress={this.handleSubmit.bind(this)}
+          underlayColor='#88D4F5'>
+            <Text style={styles.buttonText}>Submit</Text>
+          </TouchableHighlight>
+      </View>
+    )
+  }
   render() {
     return (
-
+      
     );
   }
 };
