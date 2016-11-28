@@ -12,12 +12,14 @@ var History = new CreateHistory({
 var Base = require('./components/Base.jsx');
 var Page1 = require('./components/Page1.jsx');
 var Page2 = require('./components/Page2.jsx');
+var Page3 = require('./components/Page3.jsx');
 
 var Routes = (
   <Router history={History}>
     <Route path='/' component={Base} >
       <Route path='/page1' component={Page1} />
       <Route path='/page2' component={Page2} />
+      <Route path='*' component={Page3} />
     </Route>
   </Router>
 );
