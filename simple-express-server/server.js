@@ -25,6 +25,12 @@ var ingredients = [{'id': 1, 'text': 'Eye of Newt'},
                    {'id': 2, 'text': 'Stanky Leg'},
                    {'id': 3, 'text': 'Turkey Leg'}];
 
+var derps = [
+  'hissy',
+  'pissy',
+  'supi'
+]
+
 app.get('/nums', function(req, res) {
   res.send(nums);
 });
@@ -33,4 +39,8 @@ app.get('/ingredients', function(req, res) {
   res.send(ingredients);
 })
 
-app.listen(6060);
+app.get('*', function(req, res) {
+  res.send(derps);
+});
+
+app.listen(3000);
