@@ -12,6 +12,7 @@ app.all('/*', function(req, res, next) {
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+// app.use(express.static('public'));
 
 var nums = [
   'ache',
@@ -38,6 +39,30 @@ app.get('/nums', function(req, res) {
 app.get('/ingredients', function(req, res) {
   res.send(ingredients);
 })
+
+app.get('/file/:name', function (req, res, next) {
+
+  var options = {
+    root: __dirname + '/public/',
+    dotfiles: 'deny',
+    headers: {
+        'x-timestamp': Date.now(),
+        'x-sent': true
+    }
+  };
+
+  var fileName = req.params.name;
+  res.sendFile(fileName, options, function (err) {
+    if (err) {
+      console.log(err);
+      res.status(err.status).end();
+    }
+    else {
+      console.log('Sent:', fileName);
+    }
+  });
+
+});
 
 app.get('*', function(req, res) {
   res.send(derps);
